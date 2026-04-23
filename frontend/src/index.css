@@ -1,0 +1,173 @@
+:root {
+  --emerald-pine: #1b4d3e;
+  --champagne-gold: #f7e7ce;
+  --gold-accent: #d4af37;
+  --bg-light: #f4f7f6;
+  --text-dark: #2c3e50;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Poin 14: Responsive layout dengan grid */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border-top: 4px solid var(--emerald-pine);
+}
+
+.badge {
+  background-color: var(--champagne-gold);
+  color: var(--emerald-pine);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* Button Styling */
+.btn {
+  background-color: var(--emerald-pine);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--gold-accent);
+  color: #fff;
+}
+
+/* Poin 3: CSS transition saat expand/collapse Accordion */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+  background-color: #fafafa;
+  border-radius: 0 0 8px 8px;
+}
+
+.accordion-content.expanded {
+  max-height: 500px; /* Angka besar agar muat banyak teks */
+  padding: 15px;
+  border: 1px solid #eee;
+  border-top: none;
+}
+
+.accordion-header {
+  width: 100%;
+  text-align: left;
+  background: var(--emerald-pine);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* --- CSS UNTUK MODAL (Poin 15) --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--emerald-pine);
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.dynamic-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.btn-remove {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-add {
+  background-color: var(--champagne-gold);
+  color: var(--emerald-pine);
+  border: 1px solid var(--emerald-pine);
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
